@@ -1,0 +1,1 @@
+A simple CRUD REST API built using Spring Boot, PostgreSQL as the database, and Docker for containerization. This project is created for learning purposes and demonstrates basic REST endpoints, database integration, and running the application using Docker Compose.
