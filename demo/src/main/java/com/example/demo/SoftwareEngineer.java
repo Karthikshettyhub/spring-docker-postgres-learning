@@ -1,15 +1,21 @@
 package com.example.demo;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import java.util.Objects;
 
-public class softwareEngineer {
+@Entity
+public class SoftwareEngineer {
+
+    @Id
     private Integer id;
     private String name;
     private String techstack;
 
-   // public softwareEngineer(){}
+    // REQUIRED by JPA
+    public SoftwareEngineer() {}
 
-    public softwareEngineer(Integer id,String name,String techstack){
+    public SoftwareEngineer(Integer id, String name, String techstack) {
         this.id = id;
         this.name = name;
         this.techstack = techstack;
@@ -41,13 +47,14 @@ public class softwareEngineer {
 
     @Override
     public boolean equals(Object o) {
-        if (o == null || getClass() != o.getClass()) return false;
-        softwareEngineer that = (softwareEngineer) o;
-        return Objects.equals(id, that.id) && Objects.equals(name, that.name) && Objects.equals(techstack, that.techstack);
+        if (this == o) return true;
+        if (!(o instanceof SoftwareEngineer)) return false;
+        SoftwareEngineer that = (SoftwareEngineer) o;
+        return Objects.equals(id, that.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, name, techstack);
+        return Objects.hash(id);
     }
 }
