@@ -15,4 +15,7 @@ public class SoftwareEngineerService {
     public List<SoftwareEngineer> getAllSoftwareEngineers() {
         return softwareEngineerRepository.findAll();
     }
+    public void insertSoftwareEngineer(SoftwareEngineer softwareEngineer){
+        softwareEngineerRepository.save(softwareEngineer);
+    }
 }

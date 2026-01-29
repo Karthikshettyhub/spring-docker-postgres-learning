@@ -1,9 +1,7 @@
 package com.example.demo;
 
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,7 +18,10 @@ public class softwareEngineerController {
     public List<SoftwareEngineer> getengineers(){
         return softwareEngineerService.getAllSoftwareEngineers();
 
+    }
+    @PostMapping
+    public void addNewSoftwareengineers(@RequestBody SoftwareEngineer softwareEngineer){
+        softwareEngineerService.insertSoftwareEngineer(softwareEngineer);
 
     }
-
 }
